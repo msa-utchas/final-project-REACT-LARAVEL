@@ -1,0 +1,16 @@
+.inside-nav{
+    display: flex;
+    flex-direction: row;
+    background-color: turquoise;
+    color: white;
+    justify-content: right;
+    padding: 5px;
+    align-items: center;
+}
+.inside-nav a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+
+
+}
