@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Token;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,14 @@ class ModeratorAPIAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        $token =$request->header("Authorization");
+        $isvalid=Token::where('token',$token)->where('expired_at',NULL)->first();
+        if($isvalid){
+            return $next($request);
+        }
+        else{
+            return response("Invalid TOken",401);
+        }
+
     }
 }
