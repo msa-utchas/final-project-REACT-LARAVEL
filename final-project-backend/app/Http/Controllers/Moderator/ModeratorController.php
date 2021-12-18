@@ -98,9 +98,10 @@ class ModeratorController extends Controller
             $token->save();
             return $token;
 
-        } else {
-            return "no moderator found";
-        }
+        }  return response()->json([
+        "status" => 401,
+        "message" => "Moderator signup successful"
+    ]);
     }
 
     function logout(Request $request)

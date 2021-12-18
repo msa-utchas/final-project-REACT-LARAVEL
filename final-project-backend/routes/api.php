@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Moderator\ModeratorController;
 use App\Http\Controllers\Moderator\DecoratorController;
 use App\Http\Controllers\Moderator\RefundRequestController;
+use App\Http\Controllers\Moderator\WantedPostAndOrderlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,7 @@ Route::post('/moderator/reject_decorator_signup_request/{dapp_id}', [DecoratorCo
 Route::get('/moderator/refund_requests', [RefundRequestController::class, 'viewRefundRequestPage'])->middleware("ModeratorAPIAuth");
 Route::post('/moderator/reject_refund_requests/{r_id}', [RefundRequestController::class, 'rejectRefundRequest'])->middleware("ModeratorAPIAuth");
 Route::post('/moderator/accept_refund_requests/{r_id}', [RefundRequestController::class, 'acceptRefundRequest'])->middleware("ModeratorAPIAuth");
+
+Route::get('/moderator/order_list', [WantedPostAndOrderlistController::class, 'viewOrderlist'])->middleware("ModeratorAPIAuth");
 
 
