@@ -20,6 +20,7 @@ import AcceptRefundRequest from "./moderator/refundRequests/AcceptRefundRequest"
 import RejectRefundRequest from "./moderator/refundRequests/RejectRefundRequest";
 import OutsideNav from "./moderator/navigation/OutsideNav";
 import ShowOrderList from "./moderator/showOrderList/ShowOrderList";
+import ProfileData from "./moderator/profile/ProfileData";
 
 var token = null;
 if(localStorage.getItem('moderator')){
@@ -44,6 +45,7 @@ ReactDOM.render(
                 <Route exact path='/moderator/refund_request_approval_list/accept/:id'><NavBar/><AcceptRefundRequest/> </Route>
                 <Route exact path='/moderator/refund_request_approval_list/reject/:id'><NavBar/><RejectRefundRequest/> </Route>
                 <Route exact path='/moderator/orderlist'><NavBar/> <ShowOrderList/> </Route>
+                <Route exact path='/moderator/profile'><NavBar/> <ProfileData/> </Route>
             </Switch>
         </Router>
     </React.StrictMode>,

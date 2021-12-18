@@ -30,6 +30,11 @@ const Home = () => {
             View All Orders
           </button>
         </Link>
+        <Link to="/moderator/profile">
+          <button className=" btn-lg btn-primary w-100 m-3 py-3 ">
+            View Profile
+          </button>
+        </Link>
       </div>
       {redirectToLogin}
     </div>

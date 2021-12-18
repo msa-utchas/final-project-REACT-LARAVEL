@@ -112,5 +112,10 @@ class ModeratorController extends Controller
         $validToken->save();
         return "logout";
     }
+    function profiledata(Request $request){
+        $m_id=$request->m_id;
+        $moderator=Moderator::where('m_id',$m_id)->first();
+        return $moderator;
+    }
 
 }
