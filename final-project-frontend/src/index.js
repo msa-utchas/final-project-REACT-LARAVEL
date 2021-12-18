@@ -18,6 +18,7 @@ import RefundRequests from "./moderator/refundRequests/RefundRequests";
 import PendingRefundRequests from "./moderator/refundRequests/PendingRefundRequests";
 import AcceptRefundRequest from "./moderator/refundRequests/AcceptRefundRequest";
 import RejectRefundRequest from "./moderator/refundRequests/RejectRefundRequest";
+import OutsideNav from "./moderator/navigation/OutsideNav";
 
 var token = null;
 if(localStorage.getItem('moderator')){
@@ -32,15 +33,15 @@ ReactDOM.render(
         <Router>
 
             <Switch>
-                <Route exact path='/moderator/signup'> <SignUP/> </Route>
-                <Route exact path='/moderator/login'> <Login/> </Route>
+                <Route exact path='/moderator/signup'><OutsideNav/> <SignUP/> </Route>
+                <Route exact path='/moderator/login'><OutsideNav/> <Login/> </Route>
                 <Route exact path='/moderator/home'><NavBar/> <Home/> </Route>
                 <Route exact path='/moderator/decorator_approval_list'><NavBar/><DecoratorApprovalList/> </Route>
-                <Route exact path='/moderator/decorator_approval_list/accept/:id'><Accept/> </Route>
-                <Route exact path='/moderator/decorator_approval_list/reject/:id'><Reject/> </Route>
+                <Route exact path='/moderator/decorator_approval_list/accept/:id'><NavBar/><Accept/> </Route>
+                <Route exact path='/moderator/decorator_approval_list/reject/:id'><NavBar/><Reject/> </Route>
                 <Route exact path='/moderator/refund_request_approval_list'><NavBar/><PendingRefundRequests/> </Route>
-                <Route exact path='/moderator/refund_request_approval_list/accept/:id'><AcceptRefundRequest/> </Route>
-                <Route exact path='/moderator/refund_request_approval_list/reject/:id'><RejectRefundRequest/> </Route>
+                <Route exact path='/moderator/refund_request_approval_list/accept/:id'><NavBar/><AcceptRefundRequest/> </Route>
+                <Route exact path='/moderator/refund_request_approval_list/reject/:id'><NavBar/><RejectRefundRequest/> </Route>
             </Switch>
         </Router>
     </React.StrictMode>,

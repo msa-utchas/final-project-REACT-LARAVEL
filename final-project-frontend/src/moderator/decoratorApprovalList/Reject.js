@@ -13,7 +13,18 @@ const Reject = () => {
             .catch((err) => console.log(err));
     });
     return <div>
-        <Link to="/moderator/decorator_approval_list"><button className="btn btn-primary">go back to moderator approval list</button></Link>
+        <div className="d-flex flex-column justify-content-center">
+            <h1 className="text-center m-5">Signup Request Is Rejected</h1>
+            <div className="mx-auto">
+                <Link to="/moderator/decorator_approval_list">
+
+                    <button className="btn-lg btn-primary">
+                        Go back to moderator approval list
+                    </button>
+
+                </Link>
+            </div>
+        </div>
     </div>;
 };
 

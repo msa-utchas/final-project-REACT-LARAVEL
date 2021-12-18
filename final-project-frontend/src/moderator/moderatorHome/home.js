@@ -13,10 +13,11 @@ const Home = () => {
     }
   }, []);
   return (
-    <div>
-      <h1>home</h1>
-      <Link to="/moderator/decorator_approval_list"><button className="btn btn-primary">moderator approval list</button></Link>
-      <Link to="/moderator/refund_request_approval_list"><button className="btn btn-primary mx-5">refund approval list</button></Link>
+    <div className="d-flex justify-center align-items-center">
+      <div className="mx-auto my-5">
+      <Link to="/moderator/decorator_approval_list"><button className=" btn-lg btn-primary w-100 m-3 py-3 ">moderator approval list</button></Link>
+      <Link to="/moderator/refund_request_approval_list"><button className=" btn-lg btn-primary w-100 m-3 py-3 ">refund approval list</button></Link>
+      </div>
       {redirectToLogin}
     </div>
   );

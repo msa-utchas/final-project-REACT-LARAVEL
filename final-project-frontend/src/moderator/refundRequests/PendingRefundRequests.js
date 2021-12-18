@@ -25,10 +25,8 @@ const PendingRefundRequests = () => {
     }, []);
     return (
         <div>
-            <h1>refund approval list</h1>
-            <Link to="/moderator/home">
-                <button className="btn btn-primary">home</button>
-            </Link>
+            <h1 className="text-center my-3">Refund Requests List </h1>
+
             <RefundRequests approvalList={refundRequestList}/>
             {redirectToLogin}
         </div>

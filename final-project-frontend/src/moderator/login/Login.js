@@ -56,7 +56,7 @@ const Login = () => {
     <div>
 
 
-      <form>
+      <form className="d-flex flex-column w-50 mx-auto m-5 p-5">
           <label htmlFor="ma_email">Email: </label>
         <input
           value={email}
@@ -69,8 +69,9 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
+          placeholder="Password"
         />
-        <input type="button" onClick={loginSubmit} value="log in" />
+        <input className="btn btn-primary my-3" type="button" onClick={loginSubmit} value="log in" />
       </form>
         {redirectToHome}
     </div>

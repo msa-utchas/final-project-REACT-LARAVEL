@@ -14,8 +14,16 @@ const RejectRefundRequest = () => {
             .catch((err) => console.log(err));
     });
     return <div>
-        <h1>refund rejected</h1>
-        <Link to="/moderator/refund_request_approval_list"><button className="btn btn-primary mx-5">refund approval list</button></Link>
+        <div className="d-flex flex-column justify-content-center">
+            <h1 className="text-center m-5">Refund Request Rejected</h1>
+            <div className="mx-auto">
+                <Link to="/moderator/refund_request_approval_list">
+                    <button className="btn btn-primary mx-5">
+                        refund approval list
+                    </button>
+                </Link>
+            </div>
+        </div>
     </div>;
 };
 

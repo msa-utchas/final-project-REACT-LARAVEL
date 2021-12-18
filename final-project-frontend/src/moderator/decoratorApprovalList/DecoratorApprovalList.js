@@ -25,10 +25,8 @@ const DecoratorApprovalList = () => {
   }, []);
   return (
     <div>
-      <h1>approval list</h1>
-      <Link to="/moderator/home">
-        <button className="btn btn-primary">home</button>
-      </Link>
+      <h1 className="text-center my-3">Decorator Signup Request list</h1>
+
         <Decorators approvalList={approvalList} state={setApprovalList}/>
       {redirectToLogin}
     </div>
