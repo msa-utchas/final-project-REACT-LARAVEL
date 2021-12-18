@@ -25,6 +25,7 @@ class ModeratorController extends Controller
                 'ma_dob' => 'required',
                 'ma_address' => 'required',
                 'ma_reason' => 'required',
+                'ma_gender' => 'required',
 
             ],
             [
@@ -45,6 +46,7 @@ class ModeratorController extends Controller
 
                 'ma_address.required' => 'address field is required',
                 'ma_reason.required' => 'write the valid reason',
+                'ma_gender.required' => 'Select Gender',
             ]);
         if ($validator->fails()) {
             return response()->json([

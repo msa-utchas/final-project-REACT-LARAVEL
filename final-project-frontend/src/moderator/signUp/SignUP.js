@@ -100,9 +100,10 @@ const SignUp = () => {
           <label htmlFor="ma_gender">Select Gender: </label>
           <select
             onChange={(e) => setGender(e.target.value)}
-            defaultValue={"male"}
+            defaultValue={''}
             className="form-select"
           >
+            <option value=''>Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="others">Others</option>

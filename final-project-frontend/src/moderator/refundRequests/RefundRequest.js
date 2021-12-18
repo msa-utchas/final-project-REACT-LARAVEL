@@ -27,7 +27,7 @@ const RefundRequest = (props) => {
                     <div className="w-75 mx-auto">
                         <h4>Price : {data.r_addprice}</h4>
                         <h4>Advertisement Type : {data.r_addtype}</h4>
-                        <h4>Advertisement description : {data.r_adddescription}</h4>
+                        <h4 className="mt-3"> <span className="text-danger"> Advertisement description : </span>{data.r_adddescription}</h4>
                         <h4>Reason For Refund : {data.r_reason}</h4>
                     </div>
                 </div>
