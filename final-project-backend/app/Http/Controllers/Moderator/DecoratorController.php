@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Moderator;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Decoapprovallist;
 use App\Models\Decorator;
-use Illuminate\Http\Request;
+
 
 class DecoratorController extends Controller
 {
     function viewDecoratorSignupRequests()
     {
         $data = Decoapprovallist::all();
-        return view('pages.decorator.viewDecoratorSignupRequests')->with('decorators', $data);
+        return response($data);
     }
-
     function approveDecorator(Request $request)
     {
         $decorator = new Decorator();
@@ -28,7 +29,7 @@ class DecoratorController extends Controller
         $decorator->d_yoe = $data->dapp_yoe;
         $decorator->save();
         $data->delete();
-        return redirect()->route('decoratorSignupRequestList');
+        return "accepted";
 
     }
 

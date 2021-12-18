@@ -23,7 +23,8 @@ class ModeratorAPIAuth
             return $next($request);
         }
         else{
-            return response("Invalid TOken",401);
+//            return response("Invalid Token",401);
+            return response($token,401);
         }
 
     }

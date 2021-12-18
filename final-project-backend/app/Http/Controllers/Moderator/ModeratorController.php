@@ -46,33 +46,31 @@ class ModeratorController extends Controller
                 'ma_address.required' => 'address field is required',
                 'ma_reason.required' => 'write the valid reason',
             ]);
-        if($validator->fails())
-        {
+        if ($validator->fails()) {
             return response()->json([
-               "validation_errors" => $validator->messages(),
+                "validation_errors" => $validator->messages(),
             ]);
 
-        }
-        else
-        {
-            $moderator=new Moderatorapprovallist();
-            $moderator->ma_name=$request->ma_name;
-            $moderator->ma_uname=$request->ma_uname;
-            $moderator->ma_password=$request->ma_password;
-            $moderator->ma_phone=$request->ma_phone;
-            $moderator->ma_email=$request->ma_email;
-            $moderator->ma_dob=$request->ma_dob;
-            $moderator->ma_gender=$request->ma_gender;
-            $moderator->ma_address=$request->ma_address;
-            $moderator->ma_reason=$request->ma_reason;
+        } else {
+            $moderator = new Moderatorapprovallist();
+            $moderator->ma_name = $request->ma_name;
+            $moderator->ma_uname = $request->ma_uname;
+            $moderator->ma_password = $request->ma_password;
+            $moderator->ma_phone = $request->ma_phone;
+            $moderator->ma_email = $request->ma_email;
+            $moderator->ma_dob = $request->ma_dob;
+            $moderator->ma_gender = $request->ma_gender;
+            $moderator->ma_address = $request->ma_address;
+            $moderator->ma_reason = $request->ma_reason;
             $moderator->save();
 
             return response()->json([
-               "status" => 200,
-               "message" => "Moderator signup successful"
+                "status" => 200,
+                "message" => "Moderator signup successful"
             ]);
         }
     }
+
     function verifyLogin(Request $request)
     {
 //        $validate = $request->validate(
@@ -92,17 +90,26 @@ class ModeratorController extends Controller
             ->where('m_password', $request->m_password)
             ->first();
         if ($data) {
-           $api_token= Str::random(64);
-           $token= new Token();
-           $token->userid = $data->m_id;
-           $token->token =$api_token;
-           $token->created_at= new DateTime();
-           $token->save();
-           return $token;
+            $api_token = Str::random(64);
+            $token = new Token();
+            $token->userid = $data->m_id;
+            $token->token = $api_token;
+            $token->created_at = new DateTime();
+            $token->save();
+            return $token;
 
         } else {
             return "no moderator found";
         }
+    }
+
+    function logout(Request $request)
+    {
+        $token = $request->header("Authorization");
+        $validToken = Token::where('token', $token)->first();
+        $validToken->expired_at = new DateTime();
+        $validToken->save();
+        return "logout";
     }
 
 }
