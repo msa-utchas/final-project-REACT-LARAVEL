@@ -6,7 +6,7 @@ const Accept = () => {
   const dId = useParams();
   useEffect(() => {
     axios
-      .post(`/moderator/reject_decorator_signup_request/${dId.id}`)
+      .post(`/moderator/approve_decorator_signup_request/${dId.id}`)
       .then((res) => {
         console.log(res.data);
       })

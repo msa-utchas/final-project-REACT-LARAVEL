@@ -14,6 +14,10 @@ import NavBar from "./moderator/navigation/NavBar";
 import DecoratorApprovalList from "./moderator/decoratorApprovalList/DecoratorApprovalList";
 import Accept from "./moderator/decoratorApprovalList/accept";
 import Reject from "./moderator/decoratorApprovalList/Reject";
+import RefundRequests from "./moderator/refundRequests/RefundRequests";
+import PendingRefundRequests from "./moderator/refundRequests/PendingRefundRequests";
+import AcceptRefundRequest from "./moderator/refundRequests/AcceptRefundRequest";
+import RejectRefundRequest from "./moderator/refundRequests/RejectRefundRequest";
 
 var token = null;
 if(localStorage.getItem('moderator')){
@@ -34,6 +38,9 @@ ReactDOM.render(
                 <Route exact path='/moderator/decorator_approval_list'><NavBar/><DecoratorApprovalList/> </Route>
                 <Route exact path='/moderator/decorator_approval_list/accept/:id'><Accept/> </Route>
                 <Route exact path='/moderator/decorator_approval_list/reject/:id'><Reject/> </Route>
+                <Route exact path='/moderator/refund_request_approval_list'><NavBar/><PendingRefundRequests/> </Route>
+                <Route exact path='/moderator/refund_request_approval_list/accept/:id'><AcceptRefundRequest/> </Route>
+                <Route exact path='/moderator/refund_request_approval_list/reject/:id'><RejectRefundRequest/> </Route>
             </Switch>
         </Router>
     </React.StrictMode>,

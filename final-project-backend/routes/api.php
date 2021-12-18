@@ -29,7 +29,7 @@ Route::post('/moderator/approve_decorator_signup_request/{dapp_id}', [DecoratorC
 Route::post('/moderator/reject_decorator_signup_request/{dapp_id}', [DecoratorController::class, 'rejectDecorator'])->middleware('ModeratorAPIAuth');
 
 
-Route::post('/moderator/refund_requests', [RefundRequestController::class, 'viewRefundRequestPage'])->middleware("ModeratorAPIAuth");
+Route::get('/moderator/refund_requests', [RefundRequestController::class, 'viewRefundRequestPage'])->middleware("ModeratorAPIAuth");
 Route::post('/moderator/reject_refund_requests/{r_id}', [RefundRequestController::class, 'rejectRefundRequest'])->middleware("ModeratorAPIAuth");
 Route::post('/moderator/accept_refund_requests/{r_id}', [RefundRequestController::class, 'acceptRefundRequest'])->middleware("ModeratorAPIAuth");
 

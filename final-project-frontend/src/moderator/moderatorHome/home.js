@@ -16,6 +16,7 @@ const Home = () => {
     <div>
       <h1>home</h1>
       <Link to="/moderator/decorator_approval_list"><button className="btn btn-primary">moderator approval list</button></Link>
+      <Link to="/moderator/refund_request_approval_list"><button className="btn btn-primary mx-5">refund approval list</button></Link>
       {redirectToLogin}
     </div>
   );
