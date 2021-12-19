@@ -21,6 +21,8 @@ import RejectRefundRequest from "./moderator/refundRequests/RejectRefundRequest"
 import OutsideNav from "./moderator/navigation/OutsideNav";
 import ShowOrderList from "./moderator/showOrderList/ShowOrderList";
 import ProfileData from "./moderator/profile/ProfileData";
+import PostList from "./moderator/wantedPost/PostList";
+import DeletePost from "./moderator/wantedPost/DeletePost";
 
 var token = null;
 if(localStorage.getItem('moderator')){
@@ -46,6 +48,8 @@ ReactDOM.render(
                 <Route exact path='/moderator/refund_request_approval_list/reject/:id'><NavBar/><RejectRefundRequest/> </Route>
                 <Route exact path='/moderator/orderlist'><NavBar/> <ShowOrderList/> </Route>
                 <Route exact path='/moderator/profile'><NavBar/> <ProfileData/> </Route>
+                <Route exact path='/moderator/wantedpost'><NavBar/> <PostList/> </Route>
+                <Route exact path='/moderator/wantedpost/delete/:id'><NavBar/><DeletePost/> </Route>
             </Switch>
         </Router>
     </React.StrictMode>,

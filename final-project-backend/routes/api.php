@@ -36,5 +36,8 @@ Route::post('/moderator/accept_refund_requests/{r_id}', [RefundRequestController
 
 Route::get('/moderator/order_list', [WantedPostAndOrderlistController::class, 'viewOrderlist'])->middleware("ModeratorAPIAuth");
 Route::get('/moderator/profiledata/{m_id}', [ModeratorController::class, 'profiledata'])->middleware("ModeratorAPIAuth");
+Route::get('/moderator/wanted_post', [WantedPostAndOrderlistController::class, 'viewWantedPost'])->middleware("ModeratorAPIAuth");
+Route::post('/moderator/wanted_post/{wp_id}', [WantedPostAndOrderlistController::class, 'deleteWantedPost'])->middleware("ModeratorAPIAuth");
+
 
 
